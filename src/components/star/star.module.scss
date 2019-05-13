@@ -1,0 +1,22 @@
+.input {
+  display: none;
+}
+
+.input:checked + .star {
+  fill: #ffd055;
+}
+
+.button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.active .star{
+  fill: #ffd055;
+}
