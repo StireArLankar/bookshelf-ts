@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const AddBook = (props: IProps) => {
-  return <BookForm creating={ true } history={ props.history } />
+  return <BookForm creating={true} history={props.history} />
 }
 
 export default AddBook

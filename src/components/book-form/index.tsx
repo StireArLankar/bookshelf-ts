@@ -10,14 +10,14 @@ import {
   descValidation,
   ISBNValidation,
   titleValidation,
-  yearValidation
+  yearValidation,
 } from './validations'
 
 import { History } from 'history'
 
 interface IProps {
-  data?: IBook,
-  creating?: boolean,
+  data?: IBook
+  creating?: boolean
   history: History
 }
 
@@ -29,7 +29,7 @@ const nullData = {
   year: '',
   cover: undefined,
   id: 0,
-  rating: undefined
+  rating: undefined,
 }
 
 const BookForm = (props: IProps) => {
@@ -42,7 +42,7 @@ const BookForm = (props: IProps) => {
     description: true,
     ISBN: true,
     author: true,
-    year: true
+    year: true,
   })
   const context = useContext(BookContext)
 
@@ -61,7 +61,7 @@ const BookForm = (props: IProps) => {
       description: descValidation(state.description),
       ISBN: ISBNValidation(state.ISBN),
       title: titleValidation(state.title),
-      year: state.year ? yearValidation(state.year) : true
+      year: state.year ? yearValidation(state.year) : true,
     }
   }
 
@@ -88,64 +88,64 @@ const BookForm = (props: IProps) => {
   }
 
   return (
-    <form className={ style.form }>
+    <form className={style.form}>
       <ImgInput
-        img={ state.cover }
+        img={state.cover}
         name='cover'
-        editing={ editing }
-        onDataChange={ onDataChange }
+        editing={editing}
+        onDataChange={onDataChange}
       />
       <TextInput
         name='title'
-        data={ state.title }
-        editing={ editing }
-        onDataChange={ onDataChange }
-        valid={ valid.title }
+        data={state.title}
+        editing={editing}
+        onDataChange={onDataChange}
+        valid={valid.title}
         placeholder='Title'
       />
       <TextInput
         name='description'
-        data={ state.description }
-        editing={ editing }
-        onDataChange={ onDataChange }
-        valid={ valid.description }
+        data={state.description}
+        editing={editing}
+        onDataChange={onDataChange}
+        valid={valid.description}
         placeholder='Description'
       />
       <TextInput
         name='author'
-        data={ state.author }
-        editing={ editing }
-        onDataChange={ onDataChange }
-        valid={ valid.author }
+        data={state.author}
+        editing={editing}
+        onDataChange={onDataChange}
+        valid={valid.author}
         placeholder='Author'
       />
       <TextInput
         name='ISBN'
-        data={ state.ISBN }
-        editing={ editing }
-        onDataChange={ onDataChange }
-        valid={ valid.ISBN }
+        data={state.ISBN}
+        editing={editing}
+        onDataChange={onDataChange}
+        valid={valid.ISBN}
         placeholder='1234'
       />
       <TextInput
         name='year'
-        data={ state.year }
-        editing={ editing }
-        onDataChange={ onDataChange }
-        valid={ valid.year }
+        data={state.year}
+        editing={editing}
+        onDataChange={onDataChange}
+        valid={valid.year}
         placeholder='2000'
       />
       <Rating
-        value={ state.rating }
-        editing={ editing }
-        onDataChange={ onDataChange }
+        value={state.rating}
+        editing={editing}
+        onDataChange={onDataChange}
       />
       <Controls
-        creating={ creating }
-        editing={ editing }
-        setEditing={ setEditing }
-        onAdd={ onAdd }
-        onUpdate={ onUpdate }
+        creating={creating}
+        editing={editing}
+        setEditing={setEditing}
+        onAdd={onAdd}
+        onUpdate={onUpdate}
       />
     </form>
   )

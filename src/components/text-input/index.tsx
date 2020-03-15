@@ -3,17 +3,17 @@ import style from './text-input.module.scss'
 import cn from 'classnames'
 
 interface IProps {
-  name: string,
-  data: string | undefined,
-  editing: boolean,
-  onDataChange: (name: string, value: string) => void,
-  valid: boolean,
+  name: string
+  data: string | undefined
+  editing: boolean
+  onDataChange: (name: string, value: string) => void
+  valid: boolean
   placeholder: string
 }
 
 const TextInput = (props: IProps) => {
   const { name, data, editing, onDataChange, valid, placeholder } = props
-  const [ isValid, setIsValid ] = useState(true)
+  const [isValid, setIsValid] = useState(true)
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     onDataChange(name, e.target.value)
@@ -25,16 +25,19 @@ const TextInput = (props: IProps) => {
   }, [valid])
 
   return (
-    <label className={ style.label }>
-      <span className={ style.name }>{ name }</span>
+    <label className={style.label}>
+      <span className={style.name}>{name}</span>
       <input
-        className={ cn(style.input, { [style.invalid]: !isValid, [style.active]: editing }) }
+        className={cn(style.input, {
+          [style.invalid]: !isValid,
+          [style.active]: editing,
+        })}
         type='text'
-        name={ name }
-        value={ data }
-        disabled={ !editing }
-        onChange={ onChange }
-        placeholder={ placeholder }
+        name={name}
+        value={data}
+        disabled={!editing}
+        onChange={onChange}
+        placeholder={placeholder}
         autoComplete='off'
       />
     </label>

@@ -9,11 +9,12 @@ interface IProps {
 }
 
 const BookPreview = (props: IProps) => {
-  const { book: { id, rating, title } } = props
+  const { id, rating, title } = props.book
+
   return (
-    <Link to={ `/${id}` } className={ style.link }>
-      <h3 className={ style.title }>{ title }</h3>
-      { rating && <Rating value={ rating } /> }
+    <Link to={`/${id}`} className={style.link}>
+      <h3 className={style.title}>{title}</h3>
+      {rating && <Rating value={rating} />}
     </Link>
   )
 }

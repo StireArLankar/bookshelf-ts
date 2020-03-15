@@ -9,5 +9,5 @@ export {
   descValidation,
   ISBNValidation,
   titleValidation,
-  yearValidation
+  yearValidation,
 }

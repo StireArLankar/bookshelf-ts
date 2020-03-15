@@ -2,10 +2,10 @@ import React from 'react'
 import style from './book-form.module.scss'
 
 interface IProps {
-  editing: boolean,
-  creating: boolean,
-  setEditing: (arg: boolean) => void,
-  onAdd: () => void,
+  editing: boolean
+  creating: boolean
+  setEditing: (arg: boolean) => void
+  onAdd: () => void
   onUpdate: () => void
 }
 
@@ -14,20 +14,20 @@ const Controls = (props: IProps) => {
 
   if (creating) {
     return (
-      <button type='button' onClick={ onAdd } className={ style.btn }>
+      <button type='button' onClick={onAdd} className={style.btn}>
         Добавить книгу
       </button>
     )
   } else if (editing) {
     return (
-      <button type='button' onClick={ onUpdate } className={ style.btn }>
+      <button type='button' onClick={onUpdate} className={style.btn}>
         Сохранить изменения
       </button>
     )
   } else {
     const onSetEditing = () => setEditing(true)
     return (
-      <button type='button' onClick={ onSetEditing } className={ style.btn }>
+      <button type='button' onClick={onSetEditing} className={style.btn}>
         Редактировать книгу
       </button>
     )
