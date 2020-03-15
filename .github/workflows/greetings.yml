@@ -1,0 +1,11 @@
+name: Greetings
+
+on: [push]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Node App Helper Actions
+        uses: guahanweb/action-nodejs-gh-pages@1.0.0
+
