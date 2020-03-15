@@ -7,13 +7,16 @@ interface IProps {
 }
 
 const BookList = (props: IProps) => {
-  const renderList = () => {
-    return props.books.map((book) => {
-      return <li key={ book.id }><BookPrewiew book={ book }/></li>
-    })
-  }
+  const { books } = props
 
-  return <ul className='list'>{ renderList() }</ul>
+  const renderList = () =>
+    books.map((book) => (
+      <li key={book.id}>
+        <BookPrewiew book={book} />
+      </li>
+    ))
+
+  return <ul className='list'>{renderList()}</ul>
 }
 
 export default BookList

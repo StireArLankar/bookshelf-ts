@@ -7,7 +7,7 @@ const Main = () => {
 
   return (
     <div>
-      <BookList books={ context.books } />
+      <BookList books={context.books} />
     </div>
   )
 }

@@ -10,7 +10,7 @@ type MatchParams = {
 }
 
 const Book = (props: IProps) => {
-  const [ book, setBook ] = useState<IBook | null>(null)
+  const [book, setBook] = useState<IBook | null>(null)
   const context = useContext(BookContext)
   const id = props.match.params.id
 
@@ -19,7 +19,7 @@ const Book = (props: IProps) => {
     temp && setBook(temp)
   }, [context.books, id])
 
-  return book && <BookForm data={ book } history={ props.history } />
+  return book && <BookForm data={book} history={props.history} />
 }
 
 export default Book
